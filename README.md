@@ -3,15 +3,18 @@ CGI scripts
 
 Everyone is expected to run these script locally before they commit. Follow the
 directions below to configure your system to run your scripts.  
-  
+
 ## Apache install and configuration
 - Install Apache web server locally  
+
     ```
     $ sudo apt-get install apache2
-    ```
+    ```  
+      
 - Edit `apache2.conf` to read `.htaccess` file.  
     * `$ vim /etc/apache2/apache2.conf`
-    * Find the folling in the configuration file.  
+    * Find the folling in the configuration file.
+
     ```
     <Directory /var/www/>
         Options Indexes FollowSymLinks
