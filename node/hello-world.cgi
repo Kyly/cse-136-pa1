@@ -40,12 +40,13 @@ colors[14] = "white";
 colors[15] = "yellow";
 
 var randomint = Math.floor(Math.random() * (16 - 1 + 1) + 1);
+var color = colors[randomint-1].toString();
 
 sys.puts("Content-type: text/html\n");
 
 sys.puts("<!DOCTYPE html> <html> <head> <meta charset='UTF-8'><title>We code in our underpants</title>\n");
-sys.puts("</head><body>\n");
+sys.puts("</head>\n");
+sys.puts("<body bgcolor=\""+color+"\">\n");
 sys.puts("Hello World from node @"+year + ":" + month + ":" + day + ":" + hour + ":" + min + ":" + sec+"<br/>\n");
-sys.puts(colors[randomint].toString()+"<br/>\n");
 sys.puts("</body>\n");
 sys.puts("</html>\n");
