@@ -39,7 +39,7 @@ colors[13] = "teal";
 colors[14] = "white";
 colors[15] = "yellow";
 
-var randomint = Math.floor(Math.random() * (16 - 1 + 1) + 1);
+var randomint = Math.floor(Math.random() * (16) + 1);
 var color = colors[randomint-1].toString();
 
 sys.puts("Content-type: text/html\n");
