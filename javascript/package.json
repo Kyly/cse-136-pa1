@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Kyly/cse-136-pa1#readme",
   "dependencies": {
+    "lodash": "^4.9.0",
     "moment": "^2.12.0"
   }
 }
