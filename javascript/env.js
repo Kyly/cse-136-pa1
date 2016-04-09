@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 var out = process.stdout;
-headers = require('./processHeader.js').parseHeader(process.env);
+var headers = require('./processHeader.js').parseHeader(process.env);
 var head =  'Content-Type: text/html\r\n\n' +
     '<!DOCTYPE html> <html> <head> <meta charset="UTF-8"><title>We code in our underpants</title>\n' +
     '</head><body>\n';
