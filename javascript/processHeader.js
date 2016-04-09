@@ -20,7 +20,7 @@ ProcessHeader.prototype.parseHeader = function (env) {
 
         if (!value) return;
 
-        if (/^HTTP_.*$/.test(key) || /^REQUEST_.*$/.test(key)) {
+        if (key.startsWith('HTTP_') || key.startsWith('REQUEST_')) {
             http.push([key, value]);
             return;
         }
