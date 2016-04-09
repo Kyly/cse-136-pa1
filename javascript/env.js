@@ -1,4 +1,4 @@
-#!/usr/bin/env nodejs
+#!/usr/bin/env node
 var out = process.stdout;
 headers = require('./processHeader.js').parseHeader(process.env);
 var head =  'Content-Type: text/html\r\n\n' +
