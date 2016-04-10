@@ -14,9 +14,11 @@ for var in sorted_env_vars:
     f1 = p1.match(var[0])
     f2 = p2.match(var[0])
     if f1 or f2:
-        browser_vars.append(var)
+        if var[1]:
+            browser_vars.append(var)
     else:
-    	server_vars.append(var)
+        if var[1]:
+    	    server_vars.append(var)
 
 def printTable(array):
 	print "<table><tr><th>Name</th><th>Value</th></tr>"
