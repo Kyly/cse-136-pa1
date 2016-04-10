@@ -1,2 +1,0 @@
-Action cgi-node /cgi-bin/cgi-node.min.js 
-AddHandler cgi-node .jss
