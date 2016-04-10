@@ -23,7 +23,6 @@ int main()
    cout << "<html>" << endl;
    cout << "<head> <meta charset='UTF-8'><title>We code in our underpants</title> <head>" << endl;
    cout << "<body bgcolor=\""+color+"\">" << endl;
-   cout << "   <body>" << endl;
    cout << " Hello World! from C++ @" << str << endl;
    cout << "   </body>" << endl;
    cout << "</html>" << endl;

@@ -21,7 +21,7 @@ int main ()
    cout << "<tr><td>HTTP_ACCEPT</td><td>" <<  getenv("HTTP_ACCEPT")  << "</td></tr>" << endl;
 cout << "<tr><td>HTTP_ACCEPT_ENCODING</td><td>" <<  getenv("HTTP_ACCEPT_ENCODING")  << "</td></tr>" << endl;
 cout << "<tr><td>HTTP_ACCEPT_LANGUAGE</td><td>" <<  getenv("HTTP_ACCEPT_LANGUAGE")  << "</td></tr>" << endl;
-cout << "<tr><td>HTTP_CACHE_CONTROL</td><td>" <<  getenv("HTTP_CACHE_CONTROL")  << "</td></tr>" << endl;
+if(getenv("HTTP_CACHE_CONTROL")!=0)cout << "<tr><td>HTTP_CACHE_CONTROL</td><td>" <<  getenv("HTTP_CACHE_CONTROL")  << "</td></tr>" << endl;
 cout << "<tr><td>HTTP_CONNECTION</td><td>" <<  getenv("HTTP_CONNECTION")  << "</td></tr>" << endl;
 cout << "<tr><td>HTTP_COOKIE</td><td>" <<  getenv("HTTP_COOKIE")  << "</td></tr>" << endl;
 if(getenv("HTTP_DNT")!=0) cout << "<tr><td>HTTP_DNT</td><td>" <<  getenv ("HTTP_DNT")  << "</td></tr>" << endl;
