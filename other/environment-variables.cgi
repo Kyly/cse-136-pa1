@@ -1,7 +1,5 @@
 #!/bin/bash
 
-THISPATH=/usr/bin/env
-
 echo "Content-Type: text/html"
 echo ""
 echo '<html>'
