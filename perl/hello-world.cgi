@@ -1,3 +1,3 @@
-#!c:\perl64\bin\perl.exe
+-#!/usr/bin/perl
 print "Content-type: text/html\n\n";
 print "Hello, World.";
