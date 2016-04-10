@@ -1,41 +1,41 @@
 #!/usr/bin/env python
 
 import os
+import re
+
 env_vars = os.environ.data
+sorted_env_vars = sorted(env_vars.items())
+p1 = re.compile("^HTTP_*")
+p2 = re.compile("^REQUEST_*")
+server_vars = []
+browser_vars = []
+
+for var in sorted_env_vars:
+    f1 = p1.match(var[0])
+    f2 = p2.match(var[0])
+    if f1 or f2:
+        browser_vars.append(var)
+    else:
+    	server_vars.append(var)
+
+def printTable(array):
+	print "<table><tr><th>Name</th><th>Value</th></tr>"
+	for ele in array:
+		print "<tr>"
+		print "<td>" + ele[0] + "</td><td>" + ele[1] + "</td>"
+		print "</tr>"
+	print "</table>"
 
 print "Content-Type: text/html"
-print
+print ""
+print "<!DOCTYPE html> <html> <head> <meta charset='UTF-8'><title>We code in our underpants</title></head>"
+print "<body style='background-color:white;'>"
 
-print "<!DOCTYPE html> <html> <head> <meta charset='UTF-8'><title>We code in our underpants</title>"
-print "<style>" 
-print "table, th, td { border: 1px solid black; border-collapse: collapse; }"
-print "th, td { padding: 5px; }"
-print "</style>"
+print "<h1>Server</h1>"
+printTable(server_vars)
 
-print "</head> <body style='background-color:" + "white" + "'>"
-sorted_env_vars = sorted(env_vars.items())
+print "<h1>Client</h1>"
+printTable(browser_vars)
 
-print "<h1>ENVIRONMENT VARIABLES</h1> <br><br>"
-
-# Browser Vars
-print "<h2>BROWSER VARIABLES</h2>"
-print "<table>"
-print "<tr><th>ENVIRONMENT VARIABLE NAME</th><th>VALUE</th></tr>"
-for var in sorted_env_vars:
-    if "HTTP" in var[0]:
-        print "<tr><td>" + var[0] + "</td><td>" + var[1] + "</td></tr>"
-print "</table>"
-print "<br><br>"
-
-# Server Vars
-print "<h2>SERVER VARIABLES</h2>"
-print "<table>"
-print "<tr><th>ENVIRONMENT VARIABLE NAME</th><th>VALUE</th></tr>"
-for var in sorted_env_vars:
-    if "HTTP" not in var[0]:
-        print "<tr><td>" + var[0] + "</td><td>" + var[1] + "</td></tr>"
-
-print "</table>"
-print "<br><br>"
 print "</body>"
 print "</html>"
