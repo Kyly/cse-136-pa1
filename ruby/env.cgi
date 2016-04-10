@@ -3,27 +3,18 @@ require "cgi"
 cgi = CGI.new("html5")
 cgi.out {
   cgi.html({"PRETTY" => " "}) {
-    envBrowserVars = {}
-    envServerVars = {}
     envServerVarsString = ""
     envBrowserVarsString = ""
     ENV.each {|key, value| 
-      print key + " "
       if key.match('^HTTP|^REQUEST')
-        envBrowserVars[key] = value
+        envBrowserVarsString.concat("<TR><TD>"+key+"</TD><TD>"+value+"</TD></TR>")
       else
-        envServerVars[key] = value
+        envServerVarsString.concat("<TR><TD>"+key+"</TD><TD>"+value+"</TD></TR>")
       end
-    }
-    envServerVars.each {|var, value|
-      envServerVarsString.concat("<TR><TD>"+var+"</TD><TD>"+value+"</TD></TR>")
-    }
-    envBrowserVars.each {|var, value|
-      envBrowserVarsString.concat("<TR><TD>"+var+"</TD><TD>"+value+"</TD></TR>")
     }
     "<HEAD><META charset='UTF-8'><TITLE>We code in our underpants</TITLE></HEAD>"+
     "<BODY><H1>Server</H1><TABLE><TR><TH>Name</TH><TH>Value</TH></TR>"+envServerVarsString+
-    "</TABLE><H1>Client</H1><TABLE><TR><TH>Name</TH><TH>Value</TH></TR>"+
-    envBrowserVarsString
+    "</TABLE><H1>Client</H1><TABLE><TR><TH>Name</TH><TH>Value</TH></TR>"+envBrowserVarsString+
+    "</TABLE></BODY>"
   }
 }
