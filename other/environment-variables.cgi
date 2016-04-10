@@ -42,7 +42,7 @@ echo '<th>VALUE</th>'
 echo '</tr>'
 echo "<tr><td>CONTEXT_DOCUMENT_ROOT</td><td>${CONTEXT_DOCUMENT_ROOT}</td></tr>"
 echo "<tr><td>CONTEXT_PREFIX</td><td>${CONTEXT_PREFIX}</td></tr>"
-echo "<tr><td>DOCUMENT_ROO</td><td>${DOCUMENT_ROO}</td></tr>"
+echo "<tr><td>DOCUMENT_ROOT</td><td>${DOCUMENT_ROOT}</td></tr>"
 echo "<tr><td>GATEWAY_INTERFACE</td><td>${GATEWAY_INTERFACE}</td></tr>"
 echo "<tr><td>PATH</td><td>${PATH}</td></tr>"
 echo "<tr><td>QUERY_STRING</td><td>${QUERY_STRING}</td></tr>"
