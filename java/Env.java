@@ -14,8 +14,8 @@ public class Env {
     }
 
     public static void main (String[] args) {
-	System.out.println("Content-type: text/html\n\n");
-	System.out.println("<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>Environment CGI</title>\n</head>\n");
+	System.out.println(cgiHelper.header());
+	System.out.println(cgiHelper.htmlTop("Environment CGI"));
         Map<String, String> unsorted = System.getenv();
 	Map<String, String> env = new TreeMap<String, String>(unsorted);
 	Map<String, String> browser = new TreeMap<String, String>();
@@ -39,7 +39,7 @@ public class Env {
         printTable(browser);
 	
         // html bottom
-        System.out.println("</body>\n</html>");
+        System.out.println(cgiHelper.htmlBottom());
     }
  
 }
