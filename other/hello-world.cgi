@@ -1,3 +1,5 @@
+#!/usr/bin/env php
+
 <?php
 
 $randInt = rand(1, 16);

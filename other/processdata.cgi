@@ -1,10 +1,6 @@
+#!/usr/bin/env php
+
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: abbas
- * Date: 4/10/16
- * Time: 7:15 PM
- */
 
 if ($_REQUEST["name"]) {
     $name = $_REQUEST["name"];
