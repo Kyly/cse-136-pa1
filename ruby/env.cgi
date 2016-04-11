@@ -1,20 +1,22 @@
 #!/usr/local/bin/ruby
 require "cgi"
+require "./cgi-utils.rb"
+
 cgi = CGI.new("html5")
+
 cgi.out {
   cgi.html({"PRETTY" => " "}) {
-    envServerVarsString = ""
-    envBrowserVarsString = ""
+    envServerVars = ""
+    envBrowserVars = ""
     ENV.each {|key, value| 
       if key.match('^HTTP|^REQUEST')
-        envBrowserVarsString.concat("<TR><TD>"+key+"</TD><TD>"+value+"</TD></TR>")
+        envBrowserVars.concat("<TR><TD>"+key+"</TD><TD>"+value+"</TD></TR>")
       else
-        envServerVarsString.concat("<TR><TD>"+key+"</TD><TD>"+value+"</TD></TR>")
+        envServerVars.concat("<TR><TD>"+key+"</TD><TD>"+value+"</TD></TR>")
       end
     }
-    "<HEAD><META charset='UTF-8'><TITLE>We code in our underpants</TITLE></HEAD>"+
-    "<BODY><H1>Server</H1><TABLE><TR><TH>Name</TH><TH>Value</TH></TR>"+envServerVarsString+
-    "</TABLE><H1>Client</H1><TABLE><TR><TH>Name</TH><TH>Value</TH></TR>"+envBrowserVarsString+
-    "</TABLE></BODY>"
+    html_head("white") + "<H1>Server</H1><TABLE><TR><TH>Name</TH><TH>Value</TH></TR>"+
+    envServerVars + "</TABLE><H1>Client</H1><TABLE><TR><TH>Name</TH><TH>Value</TH></TR>"+
+    envBrowserVars + "</TABLE></BODY>"
   }
 }
