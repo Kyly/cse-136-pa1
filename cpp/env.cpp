@@ -43,7 +43,7 @@ int main ()
 
     while(environ[count] != NULL)
     {
-    	if(strstr(environ[count],"HTTP") != 0){
+    	if(strstr(environ[count],"HTTP_") != 0){
 		browvars[browcount] = environ[count];
 		browcount++;
 	}
@@ -61,14 +61,13 @@ int main ()
     count = 0;
 
 
-    while(browvars[count] != NULL){
+    for(count = 0; count < browcount; count++){
 	const char * separator = strchr(browvars[count], '=');
-	if(separator == NULL) break;
+	if(separator == NULL) continue;
 	int index = separator - browvars[count];
 	string pre(browvars[count], index);
 	string post(browvars[count]+index+1);
         cout << "<tr><td>" << pre <<"</td><td>" << post << "</td></tr>" <<endl;
-        count++;
     }
 
 
@@ -82,14 +81,13 @@ int main ()
    cout << "</tr>" << endl;
 
    count = 0;
-   while(servvars[count] != NULL){
+   for(count = 0; count < servcount; count++){
 	const char * separator = strchr(servvars[count], '=');
-	if(separator == NULL) break;
+	if(separator == NULL) continue;
 	int index = separator - servvars[count];
 	string pre(servvars[count], index);
 	string post(servvars[count]+index+1);
         cout << "<tr><td>" << pre <<"</td><td>" << post << "</td></tr>" <<endl;
-        count++;
    }
 
    cout << "</table>" << endl;
