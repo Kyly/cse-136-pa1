@@ -5,17 +5,19 @@ public class HelloWorld {
 
     public static void main(String[] args) {
     	// Header portion of the code
-	System.out.println("Content-type: text/html\n\n");
-	System.out.println("<html>\n<head>\n<title>Hello CGI World</title>\n</head>\n");
-	
+	System.out.println(cgiHelper.header());
+	System.out.println(cgiHelper.htmlTop("Hello from CGI World"));
+
 	// set the body background color
 	Random rn = new Random();
 	int colorNum = rn.nextInt(16) + 1;
 	String color = "";
+        String text = "black";
 	switch(colorNum){
 		case 1: color = "aqua";
 		break;
                 case 2: color = "black";
+                text = "white";
                 break;
                 case 3: color = "blue";
                 break;
@@ -46,13 +48,13 @@ public class HelloWorld {
                 case 16: color = "yellow";
                 break;
 	}
-	System.out.println("<body bgcolor = '" + color + "'>\n");
+	System.out.println("<body style=\"background-color:" + color + "\";>\n");
 
 	// set time and print Hello World message
-	String timeStamp = new SimpleDateFormat("MM/dd/yyyy_HH:mm:ss").format(Calendar.getInstance().getTime());
-    	System.out.println("<h1>Hello World from Java @ " + timeStamp + "</h1>\n");
+	String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+    	System.out.println("<h1 style = 'color:" + text +";'>Hello World from Java @ " + timeStamp + "</h1>\n");
 	// html bottom
-	System.out.println("</body>\n</html>");         
+	System.out.println(cgiHelper.htmlBottom());         
     }
 
 }
