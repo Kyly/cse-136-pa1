@@ -12,9 +12,6 @@
   },
   "author": "wecodeinourunderpants",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kyly/cse-136-pa1/issues"
-  },
   "homepage": "https://github.com/Kyly/cse-136-pa1#readme",
   "dependencies": {
     "lodash": "^4.9.0",
