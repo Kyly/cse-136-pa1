@@ -2,4 +2,8 @@ install g++ in cygwin
 
 g++ -o hello-world.cgi hello-world.cpp
 g++ -o env.cgi env.cpp
-g++ processdata.cgi processdata.cpp
+g++ -o processdata.cgi processdata.cpp
+
+run Makefile:
+make clean
+make
