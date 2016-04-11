@@ -4,7 +4,7 @@ import datetime
 import random
 
 
-now = datetime.datetime.now()
+now = datetime.datetime.now().strftime("%m/%d/%Y %H:%M:%S")
 
 rand_int = random.randint(0,15)
 
