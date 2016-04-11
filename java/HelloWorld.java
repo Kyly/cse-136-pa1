@@ -10,43 +10,14 @@ public class HelloWorld {
 
 	// set the body background color
 	Random rn = new Random();
-	int colorNum = rn.nextInt(16) + 1;
-	String color = "";
+	int colorNum = rn.nextInt(16);
+        String [] colors = {"aqua","black","blue","fuchsia","gray","green","lime",
+                         "maroon","navy","olive","purple","red","silver","teal",
+                         "white","yellow"};
+	String color = colors[colorNum];
         String text = "black";
-	switch(colorNum){
-		case 1: color = "aqua";
-		break;
-                case 2: color = "black";
-                text = "white";
-                break;
-                case 3: color = "blue";
-                break;
-                case 4: color = "fuchsia";
-                break;
-                case 5: color = "gray";
-                break;
-                case 6: color = "green";
-                break;
-                case 7: color = "lime";
-                break;
-                case 8: color = "maroon";
-                break;
-                case 9: color = "navy";
-                break;
-                case 10: color = "olive";
-                break;
-                case 11: color = "purple";
-                break;
-                case 12: color = "red";
-                break;
-                case 13: color = "silver";
-                break;
-                case 14: color = "teal";
-                break;
-                case 15: color = "white";
-                break;
-                case 16: color = "yellow";
-                break;
+        if(colorNum == 1) {
+           text = "white";
 	}
 	System.out.println("<body style=\"background-color:" + color + "\";>\n");
 
