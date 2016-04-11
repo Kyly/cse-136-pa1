@@ -12,12 +12,6 @@ if ($_REQUEST["name"]) {
     $magicnumber = $_REQUEST["magicnumber"];
 }
 
-//else if ($_POST["name"]) {
-//    $name = $_GET["name"];
-//    $password = $_GET["password"];
-//    $magicnumber = $_GET["magicnumber"];
-//}
-
 Print ("<!DOCTYPE html> <html> <head> <meta charset='UTF-8'><title>We code in our underpants</title>");
 Print ("<body style='background-color: white'>");
 

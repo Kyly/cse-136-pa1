@@ -10,7 +10,7 @@ $text="black";
 if ($randInt == 2)
     $text="white";
 
-
+Print ("<!DOCTYPE html><html>");
 Print ("<html>");
 Print ("<head>");
 Print ("<title>We Code In Our Underpants</title>");
