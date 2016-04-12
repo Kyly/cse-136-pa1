@@ -7,7 +7,7 @@
 using namespace std;
 int main()
 {
-   string colors [16] = {"aqua", "black text=white", "blue","fuchsia","gray","green","lime","maroon","navy","olive","purple","red","silver","teal","white","yellow"};
+   string colors [16] = {"aqua", "black text=\"white\"", "blue","fuchsia","gray","green","lime","maroon","navy","olive","purple","red","silver","teal","white","yellow"};
 
    srand((unsigned int) time (NULL));
    int randomint = rand()%15;
@@ -23,7 +23,7 @@ int main()
    cout << "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">" << endl;
    cout << "<html xmlns=\"http://www.w3.org/1999/xhtml\">" << endl;
    cout << "<head> <meta charset=\"utf-8\"/> <title>We code in our underpants</title> </head>" << endl;
-   cout << "<body bgcolor="+color+">" << endl;
+   cout << "<body bgcolor=\""+color+"\">" << endl;
    cout << " <h1>Hello World! from C++ @" << str << "</h1>" << endl;
    cout << "   </body>" << endl;
    cout << "</html>" << endl;
