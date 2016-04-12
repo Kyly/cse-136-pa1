@@ -13,7 +13,7 @@ $browser = array();
 $bo = $_SERVER;
 ksort($bo);
 foreach($bo as $key_name => $key_value) {
-    if (startsWith($key_name, "HTTP_"))
+    if (startsWith($key_name, "HTTP_") || startsWith($key_name, "REQUEST_")
         $browser[$key_name] = $key_value;
     else
         $server[$key_name] = $key_value;
