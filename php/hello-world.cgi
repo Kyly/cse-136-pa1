@@ -18,5 +18,5 @@ Print ("<head>");
 Print ("<title>We Code In Our Underpants</title>");
 Print ("<meta charset='UTF-8'");
 Print ("</head>");
-Print ("<body style='background-color: " . $colors[$randInt-1] . "; color: " . $text . ";' >Hello World from PHP @" . $timezone);
+Print ("<body style='background-color: " . $colors[$randInt-1] . "; color: " . $text . ";' ><h1>Hello World from PHP @" . $timezone . '</h1>');
 Print ("</body></html>");
