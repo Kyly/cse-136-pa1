@@ -12,6 +12,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 }
 
+
+Print ("Content-Type: text/html");
+Print ("");
 Print ("<!DOCTYPE html> <html> <head> <meta charset='UTF-8'><title>We code in our underpants</title>");
 Print ("<body style='background-color: white'>");
 for ($i = 0; $i < $magicnumber; $i++) {

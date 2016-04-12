@@ -19,7 +19,7 @@ public class HelloWorld {
         if(colorNum == 1) {
            text = "white";
 	}
-	System.out.println("<body style=\"background-color:" + color + "\";>\n");
+	System.out.println("<body style='background-color:" + color + ";'>\n");
 
 	// set time and print Hello World message
 	String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
