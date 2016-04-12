@@ -1,4 +1,4 @@
 def html_head(color)
-  "<HEAD><META charset='UTF-8'><TITLE>We code in our underpants</TITLE></HEAD>" +
-  "<BODY style='background-color: " + color + ";'>"
+  "<head><meta charset='UTF-8'><title>We code in our underpants</title></head>" +
+  "<body style='background-color: " + color + ";'>"
 end

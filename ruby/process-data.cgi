@@ -1,4 +1,5 @@
-#!/usr/local/bin/ruby
+#!/usr/bin/env ruby
+
 require "cgi"
 require "./cgi-utils.rb"
 
