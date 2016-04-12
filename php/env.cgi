@@ -13,21 +13,22 @@ $browser = array();
 $bo = $_SERVER;
 ksort($bo);
 foreach($bo as $key_name => $key_value) {
-    if (startsWith($key_name, "HTTP_") || startsWith($key_name, "REQUEST_")
+    if (startsWith($key_name, "HTTP_") || startsWith($key_name, "REQUEST_"))
         $browser[$key_name] = $key_value;
     else
         $server[$key_name] = $key_value;
 
 }
 
-
+Print ("Content-Type: text/html");
+Print ("");
 Print ("<!DOCTYPE html><html>");
 Print ("<head>");
 //Print ("<style>");
 //Print ("table, th, td { border: 1px solid black; border-collapse: collapse; }");
 //Print ("</style>");
 Print ("<title>We Code In Our Underpants</title>");
-Print ("<meta charset='UTF-8'");
+Print ("<meta charset='UTF-8'>");
 Print ("</head>");
 Print("<body style='background-color: white;'>");
 
