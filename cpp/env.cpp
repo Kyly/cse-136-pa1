@@ -28,7 +28,7 @@ int main ()
 
    cout << "<h1>Environment Variables</h1><br><br>" << endl;
 
-   cout << "<h2> Browser Variables </h2>" << endl;
+   cout << "<h2> Server </h2>" << endl;
    cout << "<table>" << endl;
    cout << "<tr>" << endl;
    cout << "<th>NAME</th>" << endl;
@@ -44,7 +44,7 @@ int main ()
 
     while(environ[count] != NULL)
     {
-    	if(strstr(environ[count],"HTTP_") != 0){
+    	if(strstr(environ[count],"HTTP_") != 0 || strstr(environ[count],"REQUEST_") != 0){
 		browvars[browcount] = environ[count];
 		browcount++;
 	}
@@ -61,27 +61,6 @@ int main ()
     sort(servvars, servvars + servcount, compare);
     count = 0;
 
-
-    for(count = 0; count < browcount; count++){
-	const char * separator = strchr(browvars[count], '=');
-	if(separator == NULL) continue;
-	int index = separator - browvars[count];
-	string pre(browvars[count], index);
-	string post(browvars[count]+index+1);
-        cout << "<tr><td>" << pre <<"</td><td>" << post << "</td></tr>" <<endl;
-    }
-
-
-   cout << "</table>" << endl;
-
-   cout << "<h2>SERVER VARIABLES</h2>" << endl;
-   cout << "<table>" << endl;
-   cout << "<tr>" << endl;
-   cout << "<th>NAME</th>" << endl;
-   cout << "<th>VALUE</th>" << endl;
-   cout << "</tr>" << endl;
-
-   count = 0;
    for(count = 0; count < servcount; count++){
 	const char * separator = strchr(servvars[count], '=');
 	if(separator == NULL) continue;
@@ -90,6 +69,27 @@ int main ()
 	string post(servvars[count]+index+1);
         cout << "<tr><td>" << pre <<"</td><td>" << post << "</td></tr>" <<endl;
    }
+ 
+
+
+   cout << "</table>" << endl;
+
+   cout << "<h2>Client VARIABLES</h2>" << endl;
+   cout << "<table>" << endl;
+   cout << "<tr>" << endl;
+   cout << "<th>NAME</th>" << endl;
+   cout << "<th>VALUE</th>" << endl;
+   cout << "</tr>" << endl;
+
+   count = 0;
+   for(count = 0; count < browcount; count++){
+	const char * separator = strchr(browvars[count], '=');
+	if(separator == NULL) continue;
+	int index = separator - browvars[count];
+	string pre(browvars[count], index);
+	string post(browvars[count]+index+1);
+        cout << "<tr><td>" << pre <<"</td><td>" << post << "</td></tr>" <<endl;
+    }
 
    cout << "</table>" << endl;
     cout << "</body>" << endl;
