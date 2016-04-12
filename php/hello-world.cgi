@@ -13,8 +13,6 @@ if ($randInt == 2)
     $text="white";
 
 
-Print ("Content-Type: text/html");
-Print ("");
 Print ("<!DOCTYPE html><html>");
 Print ("<html>");
 Print ("<head>");

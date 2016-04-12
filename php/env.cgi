@@ -20,7 +20,6 @@ foreach($bo as $key_name => $key_value) {
 
 }
 
-Print ("Content-Type: text/html\n\n");
 Print ("<!DOCTYPE html>\n<html>\n");
 Print ("<head>\n");
 Print ("\t<title>We Code In Our Underpants</title>\n");
