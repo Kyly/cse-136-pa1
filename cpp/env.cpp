@@ -21,13 +21,13 @@ int main ()
     int count = 0;
 
     cout << "Content-type: text/html" << endl << endl;
+    cout << "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">" << endl;
     cout << "<html>" << endl;
-    cout << "<head> <meta charset='UTF-8'><title>We code in our underpants</title> <head>" << endl;
+    cout << "<head> <title>We code in our underpants</title> </head>" << endl;
     cout << "<body>" << endl;
 
-   cout << "<h1>Environment Variables</h1><br><br>" << endl;
 
-   cout << "<h2> Browser Variables </h2>" << endl;
+   cout << "<h1> Server </h1>" << endl;
    cout << "<table>" << endl;
    cout << "<tr>" << endl;
    cout << "<th>NAME</th>" << endl;
@@ -43,7 +43,7 @@ int main ()
 
     while(environ[count] != NULL)
     {
-    	if(strstr(environ[count],"HTTP") != 0){
+    	if(strstr(environ[count],"HTTP_") != 0 || strstr(environ[count],"REQUEST_") != 0){
 		browvars[browcount] = environ[count];
 		browcount++;
 	}
@@ -60,21 +60,20 @@ int main ()
     sort(servvars, servvars + servcount, compare);
     count = 0;
 
-
-    while(browvars[count] != NULL){
-	const char * separator = strchr(browvars[count], '=');
-	if(separator == NULL) break;
-	int index = separator - browvars[count];
-	string pre(browvars[count], index);
-	string post(browvars[count]+index+1);
+   for(count = 0; count < servcount; count++){
+	const char * separator = strchr(servvars[count], '=');
+	if(separator == NULL) continue;
+	int index = separator - servvars[count];
+	string pre(servvars[count], index);
+	string post(servvars[count]+index+1);
         cout << "<tr><td>" << pre <<"</td><td>" << post << "</td></tr>" <<endl;
-        count++;
-    }
+   }
+ 
 
 
    cout << "</table>" << endl;
 
-   cout << "<h2>SERVER VARIABLES</h2>" << endl;
+   cout << "<h1>Client</h1>" << endl;
    cout << "<table>" << endl;
    cout << "<tr>" << endl;
    cout << "<th>NAME</th>" << endl;
@@ -82,15 +81,14 @@ int main ()
    cout << "</tr>" << endl;
 
    count = 0;
-   while(servvars[count] != NULL){
-	const char * separator = strchr(servvars[count], '=');
-	if(separator == NULL) break;
-	int index = separator - servvars[count];
-	string pre(servvars[count], index);
-	string post(servvars[count]+index+1);
+   for(count = 0; count < browcount; count++){
+	const char * separator = strchr(browvars[count], '=');
+	if(separator == NULL) continue;
+	int index = separator - browvars[count];
+	string pre(browvars[count], index);
+	string post(browvars[count]+index+1);
         cout << "<tr><td>" << pre <<"</td><td>" << post << "</td></tr>" <<endl;
-        count++;
-   }
+    }
 
    cout << "</table>" << endl;
     cout << "</body>" << endl;
