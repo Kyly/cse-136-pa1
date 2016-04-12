@@ -26,9 +26,8 @@ int main ()
     cout << "<head> <title>We code in our underpants</title> </head>" << endl;
     cout << "<body>" << endl;
 
-   cout << "<h1>Environment Variables</h1><br><br>" << endl;
 
-   cout << "<h2> Server </h2>" << endl;
+   cout << "<h1> Server </h1>" << endl;
    cout << "<table>" << endl;
    cout << "<tr>" << endl;
    cout << "<th>NAME</th>" << endl;
@@ -74,7 +73,7 @@ int main ()
 
    cout << "</table>" << endl;
 
-   cout << "<h2>Client</h2>" << endl;
+   cout << "<h1>Client</h1>" << endl;
    cout << "<table>" << endl;
    cout << "<tr>" << endl;
    cout << "<th>NAME</th>" << endl;
