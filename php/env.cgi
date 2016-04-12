@@ -23,9 +23,6 @@ foreach($bo as $key_name => $key_value) {
 
 Print ("<!DOCTYPE html><html>");
 Print ("<head>");
-//Print ("<style>");
-//Print ("table, th, td { border: 1px solid black; border-collapse: collapse; }");
-//Print ("</style>");
 Print ("<title>We Code In Our Underpants</title>");
 Print ("<meta charset='UTF-8'");
 Print ("</head>");
