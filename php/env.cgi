@@ -13,44 +13,34 @@ $browser = array();
 $bo = $_SERVER;
 ksort($bo);
 foreach($bo as $key_name => $key_value) {
-    if (startsWith($key_name, "HTTP_") || startsWith($key_name, "REQUEST_"))
+    if (startsWith($key_name, "HTTP_") || startsWith($key_name, "REQUEST_") || startsWith($key_name, "QUERY_"))
         $browser[$key_name] = $key_value;
     else
         $server[$key_name] = $key_value;
 
 }
 
-Print ("Content-Type: text/html");
-Print ("");
-Print ("<!DOCTYPE html><html>");
-Print ("<head>");
-Print ("<title>We Code In Our Underpants</title>");
-Print ("<meta charset='UTF-8'>");
-Print ("</head>");
-Print("<body style='background-color: white;'>");
-
-
-
-Print ("<h1>Server</h1>");
-Print ("<table><tr><th>Name</th><th>Value</th></tr>");
+Print ("Content-Type: text/html\n\n");
+Print ("<!DOCTYPE html>\n<html>\n");
+Print ("<head>\n");
+Print ("\t<title>We Code In Our Underpants</title>\n");
+Print ("\t<meta charset='UTF-8'>\t");
+Print ("</head>\n");
+Print ("<body style='background-color: white;'>\n");
+Print ("<h1>Server</h1>\n");
+Print ("<table>\n<tr><th>Name</th><th>Value</th></tr>\n");
 
 foreach($server as $key_name => $key_value) {
-    Print ("<tr><td>" . $key_name . "</td><td>" . $key_value . "</td></tr>");
+    Print ("<tr><td>" . $key_name . "</td><td>" . $key_value . "</td></tr>\n");
 }
 
-Print ("</table>");
-Print ("<br></br>");
-
-Print ("<h1>Browser</h1>");
-Print ("<table><tr><th>Name</th><th>Value</th></tr>");
+Print ("</table>\n");
+Print ("<h1>Browser</h1>\n");
+Print ("<table>\n<tr><th>Name</th><th>Value</th></tr>\n");
 
 foreach($browser as $key_name => $key_value) {
-    Print ("<tr><td>" . $key_name . "</td><td>" . $key_value . "</td></tr>");
+    Print ("<tr><td>" . $key_name . "</td><td>" . $key_value . "</td></tr>\n");
 }
 
-Print ("</table>");
-Print ("<br></br>");
-
-
-
-Print ("</body></html>");
+Print ("</table>\n");
+Print ("</body>\n</html>\n");
