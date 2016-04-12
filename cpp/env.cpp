@@ -74,7 +74,7 @@ int main ()
 
    cout << "</table>" << endl;
 
-   cout << "<h2>Client VARIABLES</h2>" << endl;
+   cout << "<h2>Client</h2>" << endl;
    cout << "<table>" << endl;
    cout << "<tr>" << endl;
    cout << "<th>NAME</th>" << endl;
