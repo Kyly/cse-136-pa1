@@ -8,7 +8,7 @@ var colors = ['aqua','black','blue','fuchsia','gray','green','lime','maroon','na
            'olive', 'purple', 'red', 'silver', 'teal', 'white', 'yellow'];
 
 html.header(colors[colorIndex]);
-out.write( '<h1>Hello World from JavaScript @ ' + now + '<h1>\n') ;
+out.write( '<h1>Hello World from JavaScript @ ' + now + '</h1>\n') ;
 html.footer();
 
 
